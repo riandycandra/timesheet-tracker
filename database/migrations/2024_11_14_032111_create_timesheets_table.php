@@ -14,8 +14,8 @@ return new class extends Migration
         Schema::create('timesheets', function (Blueprint $table) {
             $table->id();
             $table->date('date');
-            $table->text('task');
-            $table->text('description');
+            $table->text('task')->nullable();
+            $table->text('description')->nullable();
             $table->timestamps();
         });
     }

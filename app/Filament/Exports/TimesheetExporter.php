@@ -14,7 +14,7 @@ class TimesheetExporter extends Exporter
     public static function getColumns(): array
     {
         return [
-            ExportColumn::make('date'),
+            ExportColumn::make('date')->formatStateUsing(fn ($state) => \Carbon\Carbon::parse($state)->locale('id')->isoFormat('D MMMM YYYY')),
             ExportColumn::make('task'),
             ExportColumn::make('description'),
         ];
